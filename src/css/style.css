@@ -1,0 +1,327 @@
+* {
+    font-family: 'Poppins', sans-serif;
+    appearance: none;
+}
+
+:root {
+    --primary: #6A9C89;
+    --primary-hover: #5f8677;
+    --primary-active: #557569;
+    --hover-gray: rgb(216, 216, 216);
+    --active-gray: rgb(192, 192, 192);
+
+    --light: rgb(240, 240, 240);
+    --dark: rgb(51, 51, 51);
+    --light-dark: rgb(122, 122, 122);
+
+
+    --red: rgb(255, 91, 91);
+
+    --time: 0.2s;
+}
+
+
+/** element tags */
+
+input[type="text"] {
+    outline: none;
+}
+
+input[type="checkbox"] {
+    box-shadow: none !important;
+}
+
+textarea {
+    outline: none !important;
+    box-shadow: none !important;
+    font-size: 0.8rem !important;
+    width: 100%; 
+    height: 100px !important;
+    resize: none;
+}
+
+button {
+    border: none;
+    background-color: transparent;
+}
+
+.form-control {
+    box-shadow: none !important;
+}
+
+
+/** icon modification style */
+.fa-bars {
+    cursor: pointer;
+    padding: 4px 5px;
+    border-radius: 3px;
+    
+    transition: var(--time) background-color;
+}
+
+.fa-bars:hover {
+    background-color: var(--hover-gray);
+}
+
+.fa-bars:active {
+    background-color: var(--active-gray);
+}
+
+.fa-trash {
+    color: var(--red);
+    padding: 4px 5px;
+    border-radius: 3px;
+
+    cursor: pointer;
+}
+
+
+/** animation.css modification */
+.animate__animated.animate__fadeIn {
+    --animate-duration: 0.3s;
+}
+
+.animate__fadeOut {
+    --animate-duration: 0.2s;
+}
+
+/** custom classes */
+.c-btn {
+    transition: var(--time) background-color;
+}
+
+.c-btn:hover {
+    background-color: var(--hover-gray);
+}
+
+.c-btn:active {
+    background-color: var(--active-gray);
+}
+
+.form > .label {
+    font-size: 0.8rem;
+}
+
+.form div > input[type="text"] {
+    width: 100%;
+    border: 1px solid;
+    border-radius: 3px;
+    padding: 0.3rem 0.9rem;
+}
+
+.close-btn {
+    cursor: pointer;
+}
+
+.c-btn-primary {
+    color: white;
+    background-color: var(--primary);
+}
+
+.c-btn-primary:hover {
+    color: white;
+    background-color: var(--primary-hover);
+}
+
+.c-btn-primary:active {
+    color: white !important;
+    background-color: var(--primary-active) !important;
+}
+
+.list-card {
+    background-color: var(--light);
+    flex: 0 0 300px;
+    height: fit-content;
+}
+
+.task-card {
+    background-color: white;
+    cursor: pointer;
+}
+
+.task-card:hover {
+    outline: 2px solid;
+}
+
+.task-card .title {
+    font-size: 0.8rem;
+}
+
+.task-card .task-details {
+    font-size: 0.8rem;
+}
+
+.task-label {
+    color: white;
+    font-size: 0.6rem;
+    /* background-color: rgb(238, 74, 74); remove after test */
+    width: fit-content;
+    padding: 0.2rem 0.3rem;
+    border-radius: 5px;
+}
+
+/** navbar */
+
+.text-logo {
+    font-size: 1.3rem;
+    font-weight: bold !important;
+}
+
+/** sidebar */
+.sidebar {
+    height: calc(100vh - 3rem);
+    min-width: 200px;
+
+    transition: var(--time) transform;
+}
+
+.collapse {
+    margin-left: -200px;
+    transform: translateX(-100%);
+}
+
+.sidebar li {
+    border-radius: 10px;
+    transition: var(--time);
+}
+
+.sidebar li:hover {
+    background-color: var(--hover-gray);
+}
+
+.sidebar li:active {
+    background-color: var(--active-gray);
+}
+
+.sidebar li a {
+    color: var(--dark);
+    width: 100%;
+}
+
+.active {
+    border-radius: 10px;
+    background-color: var(--primary);
+}
+
+.active > * {
+    color: white;
+}
+
+/** content */
+.content {
+    min-height: calc(100vh - 3rem);
+    z-index: 1;
+    position: relative;
+    overflow: auto;
+}
+
+.add-btn {
+    color: var(--light);
+    background-color: var(--primary);
+    border: none;
+    border-radius: 40px;
+
+    transition: var(--time) all;
+}
+
+.add-btn:hover {
+    background-color: var(--hover-gray);
+}
+
+.add-btn .fa-plus {
+    color: var(--light);
+    background-color: var(--primary);
+    padding: 4px 5px;
+    border-radius: 50%;
+}
+
+/** taskboards style */
+.taskboard {
+    background-color: #6A9C89;
+    height: 7rem;
+    width: 12rem;
+
+    transition: var(--time) transform;
+}
+
+.taskboard .title {
+    color: white;
+    height: 1.5rem;
+
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.taskboard:hover {
+    transform: scale(1.03);
+}
+
+/** modal  */
+.u-modal {
+    display: none;
+    transform: translate(-50%, -50%);
+    z-index: 99;
+}
+
+/** taskboard UI  */
+.task-navbar {
+    width: 100%;
+}
+
+
+.task-container {
+    /* background-color: red; */
+    overflow-x: auto ;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin-top: 3rem;
+}
+
+.cnt {
+    height: 100%;
+}
+
+/** task details UI  */
+.task-details-card {
+    min-width: 50% !important;
+    max-height: 80%;
+    
+}
+
+.label {
+    font-size: 0.8rem;
+    background-color: var(--red);
+    width: fit-content;
+}
+
+.description-container {
+    overflow: hidden;
+}
+
+#view-textarea {
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+#view-textarea > p {
+    font-size: 0.9rem;
+}
+
+.subtask-wrapper {
+    overflow: hidden;
+    /* height: 100vh; */
+}
+
+.subtask-container {
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+.subtask > * {
+    font-size: 0.9rem;
+}
